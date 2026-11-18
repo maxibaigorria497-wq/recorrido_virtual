@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#18251f">
+  <title>Recorrido Virtual | Nuestra Escuela</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="welcome" class="welcome">
+    <div class="welcome-bg"></div>
+    <div class="welcome-shade"></div>
+
+    <div class="welcome-content">
+      <div class="logo-mark" style="overflow: hidden; padding: 0;">
+  <img src="PROYECTO ESCUELA CLIC/logo_virasoro.jfif" alt="Logo de la escuela" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+      <p class="kicker">RECORRIDO VIRTUAL</p>
+      <h1>Conocé<br><span>nuestra escuela</span></h1>
+      <p class="lead">
+        Explorá los espacios de la Escuela Técnica "Valentín Virasoro" con las panorámicas 360°.
+        Arrastrá para mirar alrededor y seguí los puntos de navegación.
+      </p>
+      <button id="startTour" class="primary-btn">Comenzar recorrido <b>→</b></button>
+    </div>
+
+    <div class="welcome-note">Experiencia interactiva · 5 espacios conectados</div>
+  </div>
+
+  <main id="tour" class="tour is-hidden">
+    <div id="viewer" class="viewer">
+      <div id="world" class="world">
+        <img id="panorama" class="panorama" draggable="false" alt="">
+        <div id="hotspots"></div>
+      </div>
+
+      <div class="vignette"></div>
+
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-symbol">
+            <img src="PROYECTO ESCUELA CLIC/logo_virasoro.jfif">
+          </div>
+          <div>
+            <strong>NUESTRA ESCUELA</strong>
+            <small>Visita virtual</small>
+          </div>
+        </div>
+
+        <div class="top-actions">
+          <button id="helpBtn" class="glass-btn" title="Ayuda">?</button>
+          <button id="mapBtn" class="glass-btn" title="Mapa">⌖</button>
+          <button id="fullscreenBtn" class="glass-btn" title="Pantalla completa">⛶</button>
+        </div>
+      </header>
+
+      <section class="place-card">
+        <div class="place-index" id="placeIndex">01</div>
+        <div>
+          <span class="eyebrow" id="placeEyebrow">ESTÁS EN</span>
+          <h2 id="placeTitle">Salón de usos múltiples</h2>
+          <p id="placeDescription">Un espacio amplio para encuentros, actividades y celebraciones.</p>
+        </div>
+      </section>
+
+      <div class="drag-hint" id="dragHint">
+        <span>↔</span> Arrastrá para mirar alrededor
+      </div>
+
+      <div class="bottom-ui">
+      
+
+        <div class="progress-wrap">
+          <div class="progress-top">
+            <span>RECORRIDO</span>
+            <b id="progressText">1 / 5</b>
+          </div>
+          <div class="progress-track"><div id="progressBar"></div></div>
+        </div>
+
+        <button id="infoBtn" class="pill-btn">ⓘ Información</button>
+        
+      </div>
+    </div>
+
+    <aside id="infoPanel" class="side-panel">
+      <button id="closeInfo" class="close-btn">×</button>z
+      <span class="panel-kicker">DESCUBRÍ ESTE ESPACIO</span>
+      <h3 id="panelTitle">Salón de usos múltiples</h3>
+      <p id="panelText"></p>
+      <div class="facts">
+        <div><span>ESPACIO</span><strong id="panelSpace">SUM</strong></div>
+        <div><span>RECORRIDO</span><strong id="panelRoute">01 / 05</strong></div>
+      </div>
+    </aside>
+
+    <div id="mapModal" class="modal">
+      <div class="modal-card">
+        <div class="modal-head">
+          <div>
+            <span class="panel-kicker">EXPLORACIÓN</span>
+            <h3>Mapa del recorrido</h3>
+          </div>
+          <button id="closeMap" class="close-btn static">×</button>
+        </div>
+
+        <div class="school-map">
+          <div class="map-line line-a"></div>
+          <div class="map-line line-b"></div>
+
+          <button class="map-node node-sum" data-location="sum">
+            <b>01</b><span>SUM</span>
+          </button>
+          <button class="map-node node-patio1" data-location="patio1">
+            <b>02</b><span>Patio · SUM</span>
+          </button>
+          <button class="map-node node-entrada" data-location="entrada">
+            <b>03</b><span>Entrada</span>
+          </button>
+          <button class="map-node node-patio2" data-location="patio2">
+            <b>04</b><span>Patio central</span>
+          </button>
+          <button class="map-node node-pasillo" data-location="pasillo">
+            <b>05</b><span>Patio · pasillo</span>
+          </button>
+          <button class="map-node node-entrada2" data-location="entrada2">
+            <b>06</b><span>Segunda entrada</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="helpModal" class="modal">
+      <div class="help-card">
+        <button id="closeHelp" class="close-btn static">×</button>
+        <span class="panel-kicker">CÓMO RECORRER</span>
+        <h3>Explorá libremente</h3>
+        <div class="help-grid">
+          <div><span>↔</span><strong>Arrastrá</strong><p>Mové la panorámica para mirar a los lados.</p></div>
+          <div><span>+</span><strong>Puntos blancos</strong><p>Tocalos para pasar a otro espacio.</p></div>
+          <div><span>⌖</span><strong>Mapa</strong><p>Elegí directamente el lugar que querés visitar.</p></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
